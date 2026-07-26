@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import { Kanit } from "next/font/google";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
 const kanit = Kanit({
@@ -18,8 +17,8 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "E. Sathyanesar | Full-Stack Developer & AI Engineer",
-  description: "Official portfolio of E. Sathyanesar showcasing Full-Stack Development, AI Engineering, Machine Learning, Automation, Java, Python, React, PostgreSQL, and Software Engineering projects.",
+  title: "E. Sathyanesar | Full-Stack Developer",
+  description: "Official portfolio of E. Sathyanesar showcasing Full-Stack Development, Machine Learning, Automation, Java, Python, React, PostgreSQL, and Software Engineering projects.",
   keywords: [
     "E. Sathyanesar",
     "Sathyanesar",
@@ -28,7 +27,6 @@ export const metadata: Metadata = {
     "Sathya Nesar",
     "Sathyanesar Software Engineer",
     "Full-Stack Developer",
-    "AI Engineer",
     "Software Engineer",
     "Computer Science Engineering Student",
     "React Developer",
@@ -47,8 +45,8 @@ export const metadata: Metadata = {
     canonical: "https://sathyanesar-portfolio.vercel.app",
   },
   openGraph: {
-    title: "E. Sathyanesar | Full-Stack Developer & AI Engineer",
-    description: "Official portfolio of E. Sathyanesar showcasing Full-Stack Development, AI Engineering, Machine Learning, Automation, Java, Python, React, PostgreSQL, and Software Engineering projects.",
+    title: "E. Sathyanesar | Full-Stack Developer",
+    description: "Official portfolio of E. Sathyanesar showcasing Full-Stack Development, Machine Learning, Automation, Java, Python, React, PostgreSQL, and Software Engineering projects.",
     url: "https://sathyanesar-portfolio.vercel.app",
     siteName: "E. Sathyanesar Portfolio",
     locale: "en_US",
@@ -56,8 +54,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "E. Sathyanesar | Full-Stack Developer & AI Engineer",
-    description: "Official portfolio of E. Sathyanesar showcasing Full-Stack Development, AI Engineering, Machine Learning, Automation, Java, Python, React, PostgreSQL, and Software Engineering projects.",
+    title: "E. Sathyanesar | Full-Stack Developer",
+    description: "Official portfolio of E. Sathyanesar showcasing Full-Stack Development, Machine Learning, Automation, Java, Python, React, PostgreSQL, and Software Engineering projects.",
     creator: "@sathya3103",
   },
   icons: {
@@ -78,7 +76,7 @@ const jsonLd = {
       "@id": "https://sathyanesar-portfolio.vercel.app/#person",
       "name": "E. Sathyanesar",
       "alternateName": ["Sathyanesar", "Sathya Nesar", "E Sathyanesar"],
-      "jobTitle": "Full-Stack Developer & AI Engineer",
+      "jobTitle": "Full-Stack Developer",
       "url": "https://sathyanesar-portfolio.vercel.app",
       "sameAs": [
         "https://linkedin.com/in/sathyanesar",
@@ -124,7 +122,6 @@ export default function RootLayout({
       </head>
       <body className="antialiased bg-[#0C0C0C] w-full max-w-[100vw] overflow-x-hidden text-[#D7E2EA]">
         {children}
-        <SpeedInsights />
       </body>
     </html>
   );

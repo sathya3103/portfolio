@@ -30,7 +30,7 @@ export default function Home() {
         <FadeIn delay={0.1} y={20} className="flex flex-col gap-2">
           <span className="text-2xl font-bold uppercase tracking-widest text-[#D7E2EA]">Sathyanesar</span>
           <span className="text-sm font-light text-[#D7E2EA]/60 uppercase tracking-widest">
-            Full-Stack Developer & AI Engineer
+            Full-Stack Developer
           </span>
         </FadeIn>
         
