@@ -1,0 +1,273 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  background-color: #0C0C0C;
+  color: #D7E2EA;
+  font-family: 'Kanit', sans-serif;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.hero-heading {
+  background: linear-gradient(180deg, #646973 0%, #BBCCD7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0C0C0C;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(187, 204, 215, 0.2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(187, 204, 215, 0.4);
+}
+
+/* Infinite Marquee Animations */
+@keyframes marquee-left {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
+}
+
+@keyframes marquee-right {
+  0% { transform: translate3d(-50%, 0, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+.animate-marquee-left {
+  animation: marquee-left 60s linear infinite;
+}
+
+.animate-marquee-right {
+  animation: marquee-right 60s linear infinite;
+}
+
+.animate-marquee-left:hover,
+.animate-marquee-right:hover {
+  animation-play-state: paused;
+}
+
+/* Dino Preloader Styles */
+.dino-loader {
+  width: 100%;
+  max-width: 400px;
+  height: 150px;
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+  border-bottom: 1px solid rgba(215, 226, 234, 0.15);
+  display: flex;
+  justify-content: center;
+}
+
+.dino-runner {
+  width: 44px;
+  height: 47px;
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  margin-left: -22px;
+  z-index: 2;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAAvAgMAAABiRrxWAAAADFBMVEX///9TU1P39/f///+TS9URAAAAAXRSTlMAQObYZgAAAPpJREFUeF7d0jFKRkEMhdGLMM307itNLALyVmHvJuzTDMjdn72E95PGFEZSmeoU4YMMgxhskvQec8YSVFX1NhGcS5ywtbmC8khcZeKq+ZWJ4F8Sr2+ZCErjkJFEfcjAc/6/BMlfcz6xHdhRthYzIZhIHMcTVY1scUUiAphK8CMSPUbieTBhvD9Lj0vyV4wklEGzHpciKGOJoBp7XDcFs4kWxxM7Ey3iZ8JbzASAvMS7XLOJHTTvEkEZSeQl7DMuwVyCasqK5+XzQRYLUJlMbPXjFcn3m8eKBSjWZMJwvGIOvViAzCbUj1VEDoqFOEQGE3SyInJQLOQMJL4B7enP1UbLXJQAAAAASUVORK5CYII=");
+  animation:
+    dinoRun 0.25s infinite steps(2),
+    dinoJump 1.5s infinite linear;
+}
+
+.dino-obstacle {
+  width: 17px;
+  height: 35px;
+  position: absolute;
+  bottom: 12px;
+  right: -50px;
+  z-index: 1;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGYAAAAjCAMAAABRlI+PAAAADFBMVEX////////39/dTU1PhglcSAAAAAXRSTlMAQObYZgAAAPNJREFUeF7tlkEKwzAMBLXr//+5iQhU7gRRQkyhZI+DhwH74jhmO+oIJBVwURljuAXagG5QqkSgBLqg3JnxJ1Cb8SmQ3o6gpO85owGlOB4m2BNKJ11BSd01owGlOHkcIAuHkz6UNpPKgozPM54dADHjJuNhZiJxdQCQgZJeBczgCAAy3yhPJvcnmdC9mZwBIsQMFV5AkzHBNknFgcKM+oyDIFcfCAoy03m+jSMIcmoVZkKqSjr1fghyahRmoKRUHYLiSI1SMlCq5CDgX6BXmKkfn+oQ0KEyyrzoy8GbXJ9xrM/YjhUZgl9nnsyTCe9rgSRdV15CwRcIEu8GGQAAAABJRU5ErkJggg==");
+  animation: moveObstacle 1.5s infinite linear;
+}
+
+.dino-ground {
+  width: 100%;
+  height: 12px;
+  position: absolute;
+  bottom: 5px;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABLAAAAAMAgMAAAAPCKxBAAAABlBMVEX///9TU1NYzE1OAAAAAXRSTlMAQObYZgAAALJJREFUeF7t1EEKAyEMhtEvMNm7sPfJEVyY+1+ltLgYAsrQCtWhbxEhQvgxIJtSZypxa/WGshgzKdbq/UihMFMlt3o/CspEYoihIMaAb6mCvM6C+BTAeyo+wN4yykV/6pVfkdLpVyI1hh7GJ6QunUoLEQlQglNP2nkQkeF8+ei9cLxMue1qxVRfk1Ej0s6AEGWfVOk0QUtnK5Xo0Lac6wpdtnQqB6VxomPaz+dgF1PaqqmeWJlz1jYUaSIAAAAASUVORK5CYII=");
+  background-repeat: repeat-x;
+  animation: moveGround 4s linear infinite;
+}
+
+@keyframes dinoRun {
+  from { background-position: -44px 0; }
+  to { background-position: -132px 0; }
+}
+
+@keyframes dinoJump {
+  0%, 35% { transform: translateY(0); }
+  50% { transform: translateY(-60px); }
+  65%, 100% { transform: translateY(0); }
+}
+
+@keyframes moveObstacle {
+  0% { right: -50px; }
+  100% { right: 100%; }
+}
+
+@keyframes moveGround {
+  from { background-position: 0 0; }
+  to { background-position: -1200px 0; }
+}
+
+/* CRT Scanlines Utility */
+.bg-scanlines {
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.25) 50%
+  ), linear-gradient(
+    90deg, 
+    rgba(255, 0, 0, 0.06), 
+    rgba(0, 255, 0, 0.02), 
+    rgba(0, 0, 255, 0.06)
+  );
+  background-size: 100% 4px, 6px 100%;
+}
+
+/* Retro Tech Coding Grid */
+.bg-grid-pattern {
+  background-size: 50px 50px;
+  background-image: 
+    linear-gradient(to right, rgba(215, 226, 234, 0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(215, 226, 234, 0.025) 1px, transparent 1px);
+}
+
+/* Social Icons Tooltip Styles */
+.social-icons-list {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  list-style: none;
+  gap: 16px;
+}
+
+.social-icons-list .icon-content {
+  position: relative;
+}
+
+.social-icons-list .icon-content .tooltip {
+  position: absolute;
+  top: -36px; /* Center tooltip above icon */
+  bottom: auto;
+  left: 50%;
+  transform: translateX(-50%) translateY(8px);
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  opacity: 0;
+  visibility: hidden;
+  font-size: 9px;
+  font-family: var(--font-kanit), sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+  z-index: 50;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.social-icons-list .icon-content:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+  top: -44px; /* Smooth slide up on hover */
+}
+
+.social-icons-list .icon-content a {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: #D7E2EA;
+  background-color: rgba(215, 226, 234, 0.04);
+  border: 1px solid rgba(215, 226, 234, 0.08);
+  transition: all 0.3s ease-in-out;
+}
+
+.social-icons-list .icon-content a:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  border-color: transparent;
+}
+
+.social-icons-list .icon-content a svg {
+  position: relative;
+  z-index: 10;
+  width: 18px;
+  height: 18px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.social-icons-list .icon-content a:hover svg {
+  color: white;
+  transform: scale(1.1);
+}
+
+.social-icons-list .icon-content a .filled {
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.social-icons-list .icon-content a:hover .filled {
+  height: 100%;
+}
+
+.social-icons-list .icon-content a[data-social="linkedin"] .filled,
+.social-icons-list .icon-content a[data-social="linkedin"] ~ .tooltip {
+  background-color: #0274b3;
+}
+
+.social-icons-list .icon-content a[data-social="github"] .filled,
+.social-icons-list .icon-content a[data-social="github"] ~ .tooltip {
+  background-color: #24262a;
+}
+
+.social-icons-list .icon-content a[data-social="instagram"] .filled,
+.social-icons-list .icon-content a[data-social="instagram"] ~ .tooltip {
+  background: linear-gradient(
+    45deg,
+    #405de6,
+    #5b51db,
+    #b33ab4,
+    #c135b4,
+    #e1306c,
+    #fd1f1f
+  );
+}
+
+.social-icons-list .icon-content a[data-social="youtube"] .filled,
+.social-icons-list .icon-content a[data-social="youtube"] ~ .tooltip {
+  background-color: #ff0000;
+}
