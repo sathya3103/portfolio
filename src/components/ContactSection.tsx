@@ -71,7 +71,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="min-h-screen bg-[#0C0C0C] text-[#D7E2EA] px-5 sm:px-8 md:px-10 py-16 flex flex-col justify-center relative z-30 border-t border-[#D7E2EA]/10">
+    <section id="contact" className="min-h-screen bg-[#0C0C0C] text-[#D7E2EA] px-5 sm:px-8 md:px-10 py-16 flex flex-col justify-center relative z-30">
       <div className="max-w-[1280px] w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
         
         {/* Contact Info Column */}

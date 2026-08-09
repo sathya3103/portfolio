@@ -8,12 +8,12 @@ import ScrollStack, { ScrollStackItem } from "./ui/ScrollStack";
 const PROJECTS = [
   {
     num: "01",
-    category: "Python / Automation / API",
-    name: "WhatsApp Weather Alert Automation",
+    category: "Python / RAG / VectorDB / FastAPI / LLM",
+    name: "Enterprise HR RAG Chatbot",
     label: "GitHub Repo",
-    href: "https://github.com/sathya3103/weather_alert_python",
-    description: "Automated Python schedule utility tracking meteorological forecasts, querying live weather APIs, and dispatching real-time notifications to WhatsApp endpoints.",
-    highlights: ["Automated 4-day forecasts", "Near-100% delivery reliability", "Sub-3-second notification triggers"],
+    href: "https://github.com/sathya3103/Enterprise_RAG_Chatbot",
+    description: "A document-grounded RAG AI chatbot querying corporate HR handbooks with zero-hallucination tolerance, ChromaDB vector store, local Ollama (Qwen2.5) inference, and exact page citations.",
+    highlights: ["User-upload-first dynamic PDF ingestion", "ChromaDB vector store with MMR similarity search", "Page-level attribution & 0.30 distance cut-off"],
   },
   {
     num: "02",
@@ -26,6 +26,15 @@ const PROJECTS = [
   },
   {
     num: "03",
+    category: "Python / Automation / API",
+    name: "WhatsApp Weather Alert Automation",
+    label: "GitHub Repo",
+    href: "https://github.com/sathya3103/weather_alert_python",
+    description: "Automated Python schedule utility tracking meteorological forecasts, querying live weather APIs, and dispatching real-time notifications to WhatsApp endpoints.",
+    highlights: ["Automated 4-day forecasts", "Near-100% delivery reliability", "Sub-3-second notification triggers"],
+  },
+  {
+    num: "04",
     category: "Python / Cybersecurity / Pynput / Forensics",
     name: "Keystroke Logging Demonstration",
     label: "GitHub Repo",
@@ -37,14 +46,27 @@ const PROJECTS = [
 
 function ProjectMockup({ num }: { num: string }) {
   if (num === "01") {
-    // WhatsApp Weather
+    // Enterprise HR RAG Chatbot
     return (
-      <div className="w-full h-full min-h-[160px] bg-[#111111]/90 rounded-2xl overflow-hidden flex items-center justify-center border border-[#D7E2EA]/10 group/img relative">
-        <img
-          src="/weather_preview.png"
-          alt="WhatsApp Weather Alert Automation"
-          className="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-105"
-        />
+      <div className="w-full h-full min-h-[160px] bg-[#111111]/90 rounded-2xl p-4 flex flex-col font-mono select-none border border-[#7C3AED]/30 text-[#D7E2EA]">
+        <div className="flex justify-between items-center border-b border-[#D7E2EA]/10 pb-2.5 mb-2.5">
+          <div className="flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+            <span className="text-[10px] font-bold text-[#D7E2EA] tracking-wide">RAG Pipeline Active</span>
+          </div>
+          <span className="text-[8px] px-1.5 py-0.5 rounded bg-[#7C3AED]/20 text-purple-300 font-bold">Qwen2.5-3B + ChromaDB</span>
+        </div>
+        <div className="flex flex-col gap-1.5 text-[9px] leading-relaxed">
+          <div className="text-[#D7E2EA]/60">💬 &quot;What is the remote work policy?&quot;</div>
+          <div className="text-purple-300">🔍 Retrieving top-5 chunks (MMR λ=0.70)...</div>
+          <div className="text-emerald-400 bg-emerald-950/30 p-2 rounded border border-emerald-500/20 text-[8.5px]">
+            ✅ &quot;Employees may work remotely up to 2 days/week with manager approval.&quot;
+          </div>
+          <div className="text-[#D7E2EA]/60 text-[8px] flex items-center gap-1 mt-0.5">
+            <span>📄</span>
+            <span className="underline">HR_Policy_2025.pdf — Page 14 (score: 0.18)</span>
+          </div>
+        </div>
       </div>
     );
   }
@@ -63,6 +85,19 @@ function ProjectMockup({ num }: { num: string }) {
   }
 
   if (num === "03") {
+    // WhatsApp Weather
+    return (
+      <div className="w-full h-full min-h-[160px] bg-[#111111]/90 rounded-2xl overflow-hidden flex items-center justify-center border border-[#D7E2EA]/10 group/img relative">
+        <img
+          src="/weather_preview.png"
+          alt="WhatsApp Weather Alert Automation"
+          className="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-105"
+        />
+      </div>
+    );
+  }
+
+  if (num === "04") {
     // Keystroke Logging
     return (
       <div className="w-full h-full min-h-[160px] bg-[#111111]/90 rounded-2xl p-4 flex flex-col font-mono select-none border border-[#D7E2EA]/5 text-[#D7E2EA]">

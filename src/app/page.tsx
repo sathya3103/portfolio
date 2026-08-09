@@ -26,7 +26,7 @@ export default function Home() {
       <ContactSection />
 
       {/* Premium Footer */}
-      <footer className="bg-[#0C0C0C] py-20 px-6 md:px-10 border-t border-[#D7E2EA]/10 flex flex-col md:flex-row justify-between items-center gap-8 relative z-30">
+      <footer className="bg-[#0C0C0C] py-20 px-6 md:px-10 flex flex-col md:flex-row justify-between items-center gap-8 relative z-30">
         <FadeIn delay={0.1} y={20} className="flex flex-col gap-2">
           <span className="text-2xl font-bold uppercase tracking-widest text-[#D7E2EA]">Sathyanesar</span>
           <span className="text-sm font-light text-[#D7E2EA]/60 uppercase tracking-widest">
