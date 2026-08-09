@@ -43,7 +43,7 @@
   border-radius: 40px;
   box-sizing: border-box;
   background-color: #0C0C0C;
-  border: 2px solid #D7E2EA;
+  border: 1px solid rgba(215, 226, 234, 0.1);
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
   position: relative;

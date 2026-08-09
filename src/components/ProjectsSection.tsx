@@ -164,7 +164,7 @@ function ProjectCard({ num, category, name, label, href, description, highlights
   return (
     <div className="w-full h-full p-5 sm:p-6 md:p-8 flex flex-col justify-between overflow-hidden">
       {/* Top Row */}
-      <div className="flex justify-between items-center flex-shrink-0 border-b border-[#D7E2EA]/15 pb-4">
+      <div className="flex justify-between items-center flex-shrink-0 border-b border-white/5 pb-4">
         <div className="flex items-center gap-4 sm:gap-6">
           <span 
             className="font-black text-[#D7E2EA] leading-none"

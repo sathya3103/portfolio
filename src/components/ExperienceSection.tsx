@@ -57,13 +57,13 @@ export default function ExperienceSection() {
         </FadeIn>
 
         {/* Experience List (Large Numbered Rows) */}
-        <div className="w-full max-w-5xl flex flex-col border-t border-[#D7E2EA]/15">
+        <div className="w-full max-w-5xl flex flex-col gap-4">
           {INTERNSHIPS.map((item, idx) => (
             <FadeIn
               key={item.num}
               delay={idx * 0.1}
               y={30}
-              className="flex flex-col md:flex-row md:items-center gap-6 sm:gap-8 md:gap-12 py-8 sm:py-10 md:py-12 border-b border-[#D7E2EA]/15 group hover:bg-white/[0.02] transition-colors duration-300 px-4 rounded-xl"
+              className="flex flex-col md:flex-row md:items-center gap-6 sm:gap-8 md:gap-12 py-8 sm:py-10 md:py-12 group hover:bg-white/[0.02] transition-colors duration-300 px-4 rounded-xl"
             >
               {/* Number */}
               <div 
@@ -108,13 +108,13 @@ export default function ExperienceSection() {
         </FadeIn>
 
         {/* Education Timeline */}
-        <div className="w-full max-w-4xl flex flex-col border-t border-[#D7E2EA]/15">
+        <div className="w-full max-w-4xl flex flex-col gap-4">
           {EDUCATION.map((item, idx) => (
             <FadeIn
               key={idx}
               delay={idx * 0.1}
               y={30}
-              className="py-8 sm:py-10 border-b border-[#D7E2EA]/15 flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-12 group hover:bg-white/[0.02] transition-colors duration-300 px-4 rounded-xl"
+              className="py-8 sm:py-10 flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-12 group hover:bg-white/[0.02] transition-colors duration-300 px-4 rounded-xl"
             >
               {/* Date Column */}
               <div className="sm:w-[200px] font-bold text-purple-300 uppercase tracking-widest text-xs font-mono flex-shrink-0 pt-1">
