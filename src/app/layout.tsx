@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Kanit } from "next/font/google";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
 const kanit = Kanit({
@@ -122,6 +123,7 @@ export default function RootLayout({
       </head>
       <body className="antialiased bg-[#0C0C0C] w-full max-w-[100vw] overflow-x-hidden text-[#D7E2EA]">
         {children}
+        <SpeedInsights />
       </body>
     </html>
   );
