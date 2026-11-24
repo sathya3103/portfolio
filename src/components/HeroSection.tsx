@@ -87,6 +87,7 @@ export default function HeroSection() {
             <h1 className="hero-heading font-black uppercase tracking-tight leading-[1.1] flex flex-col gap-1.5 sm:gap-2 md:gap-2.5 text-[8.5vw] sm:text-[7.5vw] md:text-[6vw] lg:text-[4.6vw] xl:text-[4.8vw]">
               <span className="text-[#646973]">Hi, I&apos;m</span>
               <span className="text-[#BBCCD7]">Sathyanesar</span>
+              <span className="sr-only"> – Software Developer</span>
             </h1>
           </FadeIn>
 

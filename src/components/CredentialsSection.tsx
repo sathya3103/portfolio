@@ -24,7 +24,7 @@ const ACHIEVEMENTS = [
 
 export default function CredentialsSection() {
   return (
-    <section className="bg-[#0C0C0C] text-[#D7E2EA] px-5 sm:px-8 md:px-10 py-20 relative z-30">
+    <section id="credentials" className="bg-[#0C0C0C] text-[#D7E2EA] px-5 sm:px-8 md:px-10 py-20 relative z-30">
       <div className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 pt-16">
         
         {/* Certifications Grid */}

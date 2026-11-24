@@ -128,7 +128,7 @@ export default function ContactSection() {
               {submitted && (
                 <div className="absolute inset-0 bg-[#0C0C0C]/90 z-20 flex flex-col items-center justify-center text-center p-6 transition-all duration-300">
                   <CheckCircle className="w-16 h-16 text-[#D7E2EA] mb-4 animate-bounce" />
-                  <h3 className="text-lg font-bold uppercase tracking-wider text-[#D7E2EA]">Message Sent!</h3>
+                  <p role="status" className="text-lg font-bold uppercase tracking-wider text-[#D7E2EA]">Message Sent!</p>
                   <p className="text-xs text-[#D7E2EA]/70 mt-2 max-w-xs">
                     Thank you. Sathyanesar will get back to you as soon as possible.
                   </p>

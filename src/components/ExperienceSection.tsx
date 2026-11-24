@@ -97,46 +97,48 @@ export default function ExperienceSection() {
           ))}
         </div>
 
-        {/* Education Heading */}
-        <FadeIn delay={0} y={40} className="w-full text-center">
-          <h2 
-            className="hero-heading font-black uppercase tracking-tight text-[#D7E2EA] mb-12 sm:mb-16 md:mb-24 text-center"
-            style={{ fontSize: "clamp(2.5rem, 9vw, 120px)" }}
-          >
-            Education
-          </h2>
-        </FadeIn>
-
-        {/* Education Timeline */}
-        <div className="w-full max-w-4xl flex flex-col gap-4">
-          {EDUCATION.map((item, idx) => (
-            <FadeIn
-              key={idx}
-              delay={idx * 0.1}
-              y={30}
-              className="py-8 sm:py-10 flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-12 group hover:bg-white/[0.02] transition-colors duration-300 px-4 rounded-xl"
+        {/* Education Heading & Timeline Container */}
+        <div id="education" className="w-full flex flex-col items-center">
+          <FadeIn delay={0} y={40} className="w-full text-center">
+            <h2 
+              className="hero-heading font-black uppercase tracking-tight text-[#D7E2EA] mb-12 sm:mb-16 md:mb-24 text-center"
+              style={{ fontSize: "clamp(2.5rem, 9vw, 120px)" }}
             >
-              {/* Date Column */}
-              <div className="sm:w-[200px] font-bold text-purple-300 uppercase tracking-widest text-xs font-mono flex-shrink-0 pt-1">
-                <span className="px-3 py-1 rounded-full bg-[#7C3AED]/15 border border-[#7C3AED]/30 inline-block">
-                  {item.date}
-                </span>
-              </div>
+              Education
+            </h2>
+          </FadeIn>
 
-              {/* Details Column */}
-              <div className="flex-grow flex flex-col gap-1">
-                <h3 className="font-black uppercase text-lg sm:text-xl text-[#D7E2EA] leading-snug">
-                  {item.degree}
-                </h3>
-                <span className="font-semibold text-[#7C3AED] text-sm uppercase tracking-wide">
-                  {item.school}
-                </span>
-                <p className="font-light text-[#D7E2EA]/75 text-sm sm:text-base leading-relaxed mt-2">
-                  {item.detail}
-                </p>
-              </div>
-            </FadeIn>
-          ))}
+          {/* Education Timeline */}
+          <div className="w-full max-w-4xl flex flex-col gap-4">
+            {EDUCATION.map((item, idx) => (
+              <FadeIn
+                key={idx}
+                delay={idx * 0.1}
+                y={30}
+                className="py-8 sm:py-10 flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-12 group hover:bg-white/[0.02] transition-colors duration-300 px-4 rounded-xl"
+              >
+                {/* Date Column */}
+                <div className="sm:w-[200px] font-bold text-purple-300 uppercase tracking-widest text-xs font-mono flex-shrink-0 pt-1">
+                  <span className="px-3 py-1 rounded-full bg-[#7C3AED]/15 border border-[#7C3AED]/30 inline-block">
+                    {item.date}
+                  </span>
+                </div>
+
+                {/* Details Column */}
+                <div className="flex-grow flex flex-col gap-1">
+                  <h3 className="font-black uppercase text-lg sm:text-xl text-[#D7E2EA] leading-snug">
+                    {item.degree}
+                  </h3>
+                  <span className="font-semibold text-[#7C3AED] text-sm uppercase tracking-wide">
+                    {item.school}
+                  </span>
+                  <p className="font-light text-[#D7E2EA]/75 text-sm sm:text-base leading-relaxed mt-2">
+                    {item.detail}
+                  </p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
         </div>
 
       </div>

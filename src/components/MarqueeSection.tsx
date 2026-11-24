@@ -21,9 +21,9 @@ function TechCard({ name, icon }: TechCardProps) {
       </div>
 
       {/* Skill Name Text */}
-      <h3 className="font-bold uppercase tracking-wider text-xs sm:text-[13px] text-[#D7E2EA] group-hover:text-white transition-colors duration-250 truncate relative z-10">
+      <span className="font-bold uppercase tracking-wider text-xs sm:text-[13px] text-[#D7E2EA] group-hover:text-white transition-colors duration-250 truncate relative z-10">
         {name}
-      </h3>
+      </span>
 
     </div>
   );
@@ -222,18 +222,19 @@ export default function MarqueeSection() {
               </div>
 
               {/* Skills Vertical Stack */}
-              <div className="flex flex-col gap-2 mt-0.5">
+              <ul className="flex flex-col gap-2 mt-0.5 list-none p-0 m-0" role="list">
                 {group.skills.map((item, idx) => (
-                  <FadeIn
-                    key={item.name}
-                    delay={(groupIdx * 0.05) + (idx * 0.02)}
-                    y={10}
-                    className="w-full"
-                  >
-                    <TechCard name={item.name} icon={item.icon} />
-                  </FadeIn>
+                  <li key={item.name} className="w-full">
+                    <FadeIn
+                      delay={(groupIdx * 0.05) + (idx * 0.02)}
+                      y={10}
+                      className="w-full"
+                    >
+                      <TechCard name={item.name} icon={item.icon} />
+                    </FadeIn>
+                  </li>
                 ))}
-              </div>
+              </ul>
 
             </div>
           ))}
