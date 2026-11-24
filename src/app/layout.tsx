@@ -45,18 +45,27 @@ export const metadata: Metadata = {
     canonical: "https://sathyanesar-portfolio.vercel.app",
   },
   openGraph: {
-    title: "E. Sathyanesar | Full-Stack Developer",
-    description: "Official portfolio of E. Sathyanesar showcasing Full-Stack Development, Machine Learning, Automation, Java, Python, React, PostgreSQL, and Software Engineering projects.",
-    url: "https://sathyanesar-portfolio.vercel.app",
-    siteName: "E. Sathyanesar Portfolio",
-    locale: "en_US",
+    title: "Sathya Nesar | Software Developer Portfolio",
+    description: "Explore Sathya Nesar's portfolio featuring software development, Python, Java, AI/ML, AWS cloud projects and technical skills.",
+    url: "https://sathyanesar-portfolio.vercel.app/",
+    siteName: "Sathya Nesar Portfolio",
+    locale: "en_IN",
     type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Sathya Nesar - Software Developer Portfolio Preview",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "E. Sathyanesar | Full-Stack Developer",
-    description: "Official portfolio of E. Sathyanesar showcasing Full-Stack Development, Machine Learning, Automation, Java, Python, React, PostgreSQL, and Software Engineering projects.",
+    title: "Sathya Nesar | Software Developer Portfolio",
+    description: "Explore Sathya Nesar's portfolio featuring software development, Python, Java, AI/ML, AWS cloud projects and technical skills.",
     creator: "@sathya3103",
+    images: ["/og-image.png"],
   },
   icons: {
     icon: [
