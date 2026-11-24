@@ -83,16 +83,20 @@ const jsonLd = {
     {
       "@type": "Person",
       "@id": "https://sathyanesar-portfolio.vercel.app/#person",
-      "name": "E. Sathyanesar",
-      "alternateName": ["Sathyanesar", "Sathya Nesar", "E Sathyanesar"],
-      "jobTitle": "Full-Stack Developer",
+      "name": "Sathya Nesar",
+      "alternateName": ["E. Sathyanesar", "Sathyanesar"],
       "url": "https://sathyanesar-portfolio.vercel.app",
+      "image": "https://sathyanesar-portfolio.vercel.app/sathyanesar_profile.png",
+      "affiliation": {
+        "@type": "CollegeOrUniversity",
+        "name": "Agni College of Technology",
+      },
       "sameAs": [
-        "https://linkedin.com/in/sathyanesar",
         "https://github.com/sathya3103",
-        "https://www.instagram.com/_sathyeah"
+        "https://www.linkedin.com/in/sathyanesar",
       ],
       "knowsAbout": [
+        "Software Engineering",
         "Full-Stack Web Development",
         "Artificial Intelligence",
         "Machine Learning",
@@ -101,19 +105,47 @@ const jsonLd = {
         "React",
         "Next.js",
         "PostgreSQL",
-        "Cybersecurity"
-      ]
+        "Cybersecurity",
+      ],
     },
     {
       "@type": "WebSite",
       "@id": "https://sathyanesar-portfolio.vercel.app/#website",
       "url": "https://sathyanesar-portfolio.vercel.app",
-      "name": "E. Sathyanesar Portfolio",
+      "name": "Sathya Nesar Portfolio",
+      "description": "Official developer portfolio of Sathya Nesar showcasing software engineering, AI/ML, and web development projects.",
+      "inLanguage": "en-IN",
       "publisher": {
-        "@id": "https://sathyanesar-portfolio.vercel.app/#person"
-      }
-    }
-  ]
+        "@id": "https://sathyanesar-portfolio.vercel.app/#person",
+      },
+      "author": {
+        "@id": "https://sathyanesar-portfolio.vercel.app/#person",
+      },
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": "https://sathyanesar-portfolio.vercel.app/#webpage",
+      "url": "https://sathyanesar-portfolio.vercel.app/",
+      "name": "Sathya Nesar | Software Developer Portfolio",
+      "description": "Explore Sathya Nesar's portfolio featuring software development, Python, Java, AI/ML, AWS cloud projects and technical skills.",
+      "inLanguage": "en-IN",
+      "isPartOf": {
+        "@id": "https://sathyanesar-portfolio.vercel.app/#website",
+      },
+      "about": {
+        "@id": "https://sathyanesar-portfolio.vercel.app/#person",
+      },
+      "mainEntity": {
+        "@id": "https://sathyanesar-portfolio.vercel.app/#person",
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://sathyanesar-portfolio.vercel.app/og-image.png",
+        "width": 1200,
+        "height": 630,
+      },
+    },
+  ],
 };
 
 export default function RootLayout({
