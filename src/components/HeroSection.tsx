@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import Image from "next/image";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import FadeIn from "./ui/FadeIn";
 import Lanyard from "./ui/Lanyard";
@@ -107,9 +108,13 @@ export default function HeroSection() {
               <div className="absolute top-0 left-1/2 -translate-x-1/2 w-40 h-20 bg-[#7C3AED]/20 blur-2xl pointer-events-none rounded-full" />
               
               <div className="relative w-full aspect-[3/4] rounded-xl overflow-hidden border border-[#D7E2EA]/10">
-                <img 
-                  src="/sathyanesar_profile.png" 
-                  alt="E. Sathyanesar Profile" 
+                <Image 
+                  src="/sathyanesar_profile.webp" 
+                  alt="Sathya Nesar – Software Developer" 
+                  width={480}
+                  height={480}
+                  priority
+                  sizes="(max-width: 639px) 180px, 220px"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
                 />
               </div>
