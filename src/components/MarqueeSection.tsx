@@ -11,10 +11,10 @@ interface TechCardProps {
 
 function TechCard({ name, icon }: TechCardProps) {
   return (
-    <div className="flex-shrink-0 w-full h-[54px] rounded-xl bg-[#151515] px-4 py-2.5 flex items-center justify-start gap-3.5 border border-white/5 hover:border-[#7C3AED]/40 hover:bg-[#181818] transition-all duration-250 ease-out select-none group relative overflow-hidden shadow-sm hover:shadow-[0_4px_20px_rgba(124,58,237,0.15)]">
+    <div className="flex-shrink-0 w-full h-[54px] rounded-xl bg-[#151515] px-4 py-2.5 flex items-center justify-start gap-3.5 border border-white/5 hover:border-white/30 hover:bg-[#181818] transition-all duration-250 ease-out select-none group relative overflow-hidden shadow-sm hover:shadow-[0_4px_20px_rgba(255,255,255,0.06)]">
       
-      {/* Soft Purple Glow Behind Icon on Hover */}
-      <div className="absolute left-4 w-8 h-8 bg-[#7C3AED]/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-250 pointer-events-none" />
+      {/* Soft Glow Behind Icon on Hover */}
+      <div className="absolute left-4 w-8 h-8 bg-white/10 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-250 pointer-events-none" />
 
       {/* Icon Wrapper with Scale & 3-deg Rotation on Hover */}
       <div className="flex-shrink-0 flex items-center justify-center relative z-10 transition-transform duration-250 ease-out group-hover:scale-110 group-hover:rotate-[3deg]">
@@ -268,7 +268,7 @@ export default function MarqueeSection() {
               
               {/* Category Header */}
               <div className="flex items-center gap-2 pb-3 border-b border-[#D7E2EA]/10 select-none">
-                <span className="w-1 h-3.5 rounded bg-[#7C3AED] shadow-[0_0_8px_#7C3AED]" />
+                <span className="w-1 h-3.5 rounded bg-[#D7E2EA] shadow-[0_0_8px_rgba(215,226,234,0.5)]" />
                 <h3 className="font-bold uppercase tracking-wider text-[10px] sm:text-xs text-[#D7E2EA]/75 font-mono">
                   {group.category}
                 </h3>

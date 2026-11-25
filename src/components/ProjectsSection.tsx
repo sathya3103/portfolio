@@ -49,17 +49,17 @@ function ProjectMockup({ num }: { num: string }) {
   if (num === "01") {
     // Enterprise HR RAG Chatbot
     return (
-      <div className="w-full h-full min-h-[160px] bg-[#111111]/90 rounded-2xl p-4 flex flex-col font-mono select-none border border-[#7C3AED]/30 text-[#D7E2EA]">
+      <div className="w-full h-full min-h-[160px] bg-[#111111]/90 rounded-2xl p-4 flex flex-col font-mono select-none border border-[#D7E2EA]/20 text-[#D7E2EA]">
         <div className="flex justify-between items-center border-b border-[#D7E2EA]/10 pb-2.5 mb-2.5">
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
             <span className="text-[10px] font-bold text-[#D7E2EA] tracking-wide">RAG Pipeline Active</span>
           </div>
-          <span className="text-[8px] px-1.5 py-0.5 rounded bg-[#7C3AED]/20 text-purple-300 font-bold">Qwen2.5-3B + ChromaDB</span>
+          <span className="text-[8px] px-1.5 py-0.5 rounded bg-white/10 text-[#D7E2EA] font-bold">Qwen2.5-3B + ChromaDB</span>
         </div>
         <div className="flex flex-col gap-1.5 text-[9px] leading-relaxed">
           <div className="text-[#D7E2EA]/60">💬 &quot;What is the remote work policy?&quot;</div>
-          <div className="text-purple-300">🔍 Retrieving top-5 chunks (MMR λ=0.70)...</div>
+          <div className="text-[#D7E2EA]/90">🔍 Retrieving top-5 chunks (MMR λ=0.70)...</div>
           <div className="text-emerald-400 bg-emerald-950/30 p-2 rounded border border-emerald-500/20 text-[8.5px]">
             ✅ &quot;Employees may work remotely up to 2 days/week with manager approval.&quot;
           </div>
@@ -204,7 +204,7 @@ function ProjectCard({ num, category, name, label, href, description, highlights
           <div className="flex flex-col gap-3">
             {highlights.map((hl: string, hIdx: number) => (
               <div key={hIdx} className="flex items-center gap-3 text-xs tracking-wide text-[#D7E2EA]/75">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#7C3AED] flex-shrink-0" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[#D7E2EA] flex-shrink-0" />
                 <span>{hl}</span>
               </div>
             ))}

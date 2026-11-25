@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import FadeIn from "./ui/FadeIn";
 
 const INTERNSHIPS = [
@@ -43,99 +44,96 @@ const EDUCATION = [
 
 export default function ExperienceSection() {
   return (
-    <section id="experience" className="bg-[#0C0C0C] text-[#D7E2EA] rounded-t-[40px] sm:rounded-t-[50px] md:rounded-t-[60px] -mt-10 sm:-mt-12 md:-mt-14 px-5 sm:px-8 md:px-10 py-20 sm:py-24 md:py-32 relative z-20">
-      <div className="max-w-[1280px] mx-auto flex flex-col items-center">
+    <section 
+      id="internships" 
+      className="bg-[#0C0C0C] text-[#D7E2EA] rounded-t-[40px] sm:rounded-t-[50px] md:rounded-t-[60px] -mt-10 sm:-mt-12 md:-mt-14 px-5 sm:px-8 md:px-10 py-20 sm:py-24 relative z-20"
+    >
+      {/* Anchor for backward compatibility with #experience */}
+      <span id="experience" className="absolute -top-16 left-0 opacity-0 pointer-events-none" aria-hidden="true" />
+
+      <div className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
         
-        {/* Experience Heading */}
-        <FadeIn delay={0} y={40} className="w-full text-center">
-          <h2 
-            className="hero-heading font-black uppercase tracking-tight text-[#D7E2EA] mb-12 sm:mb-16 md:mb-24 text-center"
-            style={{ fontSize: "clamp(2.5rem, 9.5vw, 130px)" }}
-          >
-            Experience
-          </h2>
-        </FadeIn>
-
-        {/* Experience List (Large Numbered Rows) */}
-        <div className="w-full max-w-5xl flex flex-col gap-4">
-          {INTERNSHIPS.map((item, idx) => (
-            <FadeIn
-              key={item.num}
-              delay={idx * 0.1}
-              y={30}
-              className="flex flex-col md:flex-row md:items-center gap-6 sm:gap-8 md:gap-12 py-8 sm:py-10 md:py-12 group hover:bg-white/[0.02] transition-colors duration-300 px-4 rounded-xl"
+        {/* Column 1: Internships */}
+        <div className="lg:col-span-6 flex flex-col">
+          <FadeIn delay={0} y={30} className="mb-8">
+            <h2 
+              className="font-black uppercase tracking-tight text-[#D7E2EA]"
+              style={{ fontSize: "clamp(1.8rem, 3.5vw, 3rem)" }}
             >
-              {/* Number */}
-              <div 
-                className="font-black text-[#D7E2EA] flex-shrink-0 leading-none select-none md:w-[140px] group-hover:text-[#7C3AED] transition-colors duration-300"
-                style={{ fontSize: "clamp(2.2rem, 6.5vw, 100px)" }}
-              >
-                {item.num}
-              </div>
+              Internships
+            </h2>
+          </FadeIn>
 
-              {/* Text Group */}
-              <div className="flex-grow flex flex-col gap-2">
-                <div className="flex flex-wrap items-center gap-3">
-                  <span className="text-xs font-mono font-bold uppercase tracking-widest text-purple-300 px-3 py-1 rounded-full bg-[#7C3AED]/15 border border-[#7C3AED]/30">
+          <div className="grid grid-cols-1 gap-4">
+            {INTERNSHIPS.map((item, idx) => (
+              <FadeIn
+                key={item.num}
+                delay={idx * 0.08}
+                y={20}
+                className="flex flex-col p-5 sm:p-6 rounded-2xl border border-[#D7E2EA]/10 bg-[#D7E2EA]/5 transition-all duration-200 hover:border-[#D7E2EA]/20 gap-3 group"
+              >
+                {/* Header Row: Role, Company & Date Badge */}
+                <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-2 sm:gap-4">
+                  <div className="flex flex-col gap-1">
+                    <h3 className="font-bold text-sm sm:text-base uppercase tracking-wide text-[#D7E2EA] group-hover:text-white transition-colors duration-200">
+                      {item.role}
+                    </h3>
+                    <span className="text-xs font-semibold uppercase tracking-wider text-[#D7E2EA]/80 font-mono">
+                      @ {item.company}
+                    </span>
+                  </div>
+                  <span className="self-start sm:self-auto text-[11px] font-mono font-bold uppercase tracking-widest text-[#D7E2EA]/90 px-3 py-1 rounded-full bg-white/[0.06] border border-white/10 whitespace-nowrap">
                     {item.date}
                   </span>
                 </div>
-                <h3 
-                  className="font-black uppercase text-[#D7E2EA] tracking-wide mt-2"
-                  style={{ fontSize: "clamp(1.1rem, 2.2vw, 1.8rem)" }}
-                >
-                  {item.role} <span className="font-semibold text-[#7C3AED]">@ {item.company}</span>
-                </h3>
-                <p 
-                  className="font-light text-[#D7E2EA]/80 leading-relaxed max-w-3xl mt-1"
-                  style={{ fontSize: "clamp(0.85rem, 1.5vw, 1.1rem)" }}
-                >
+
+                {/* Description */}
+                <p className="text-xs sm:text-sm font-light text-[#D7E2EA]/75 leading-relaxed">
                   {item.desc}
                 </p>
-              </div>
-            </FadeIn>
-          ))}
+              </FadeIn>
+            ))}
+          </div>
         </div>
 
-        {/* Education Heading & Timeline Container */}
-        <div id="education" className="w-full flex flex-col items-center">
-          <FadeIn delay={0} y={40} className="w-full text-center">
+        {/* Column 2: Education */}
+        <div id="education" className="lg:col-span-6 flex flex-col">
+          <FadeIn delay={0.1} y={30} className="mb-8">
             <h2 
-              className="hero-heading font-black uppercase tracking-tight text-[#D7E2EA] mb-12 sm:mb-16 md:mb-24 text-center"
-              style={{ fontSize: "clamp(2.5rem, 9vw, 120px)" }}
+              className="font-black uppercase tracking-tight text-[#D7E2EA]"
+              style={{ fontSize: "clamp(1.8rem, 3.5vw, 3rem)" }}
             >
               Education
             </h2>
           </FadeIn>
 
-          {/* Education Timeline */}
-          <div className="w-full max-w-4xl flex flex-col gap-4">
+          <div className="grid grid-cols-1 gap-4">
             {EDUCATION.map((item, idx) => (
               <FadeIn
                 key={idx}
                 delay={idx * 0.1}
-                y={30}
-                className="py-8 sm:py-10 flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-12 group hover:bg-white/[0.02] transition-colors duration-300 px-4 rounded-xl"
+                y={20}
+                className="flex flex-col p-5 sm:p-6 rounded-2xl border border-[#D7E2EA]/10 bg-[#D7E2EA]/5 transition-all duration-200 hover:border-[#D7E2EA]/20 gap-3 group"
               >
-                {/* Date Column */}
-                <div className="sm:w-[200px] font-bold text-purple-300 uppercase tracking-widest text-xs font-mono flex-shrink-0 pt-1">
-                  <span className="px-3 py-1 rounded-full bg-[#7C3AED]/15 border border-[#7C3AED]/30 inline-block">
+                {/* Header Row: Degree & Date Badge */}
+                <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-2 sm:gap-4">
+                  <div className="flex flex-col gap-1">
+                    <h3 className="font-bold text-sm sm:text-base uppercase tracking-wide text-[#D7E2EA] group-hover:text-white transition-colors duration-200">
+                      {item.degree}
+                    </h3>
+                    <span className="text-xs font-semibold uppercase tracking-wider text-[#D7E2EA]/80 font-mono">
+                      {item.school}
+                    </span>
+                  </div>
+                  <span className="self-start sm:self-auto text-[11px] font-mono font-bold uppercase tracking-widest text-[#D7E2EA]/90 px-3 py-1 rounded-full bg-white/[0.06] border border-white/10 whitespace-nowrap">
                     {item.date}
                   </span>
                 </div>
 
-                {/* Details Column */}
-                <div className="flex-grow flex flex-col gap-1">
-                  <h3 className="font-black uppercase text-lg sm:text-xl text-[#D7E2EA] leading-snug">
-                    {item.degree}
-                  </h3>
-                  <span className="font-semibold text-[#7C3AED] text-sm uppercase tracking-wide">
-                    {item.school}
-                  </span>
-                  <p className="font-light text-[#D7E2EA]/75 text-sm sm:text-base leading-relaxed mt-2">
-                    {item.detail}
-                  </p>
-                </div>
+                {/* Detail */}
+                <p className="text-xs sm:text-sm font-light text-[#D7E2EA]/75 leading-relaxed">
+                  {item.detail}
+                </p>
               </FadeIn>
             ))}
           </div>

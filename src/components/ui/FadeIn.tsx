@@ -1,6 +1,22 @@
 "use client";
 
+import React from "react";
 import { motion } from "framer-motion";
+
+const motionElements = {
+  div: motion.div,
+  span: motion.span,
+  p: motion.p,
+  section: motion.section,
+  header: motion.header,
+  footer: motion.footer,
+  h1: motion.h1,
+  h2: motion.h2,
+  h3: motion.h3,
+  li: motion.li,
+  ul: motion.ul,
+  article: motion.article,
+} as const;
 
 interface FadeInProps {
   children: React.ReactNode;
@@ -21,8 +37,7 @@ export default function FadeIn({
   as = "div",
   className = "",
 }: FadeInProps) {
-  // Use motion.create to dynamically instantiate the tag type (e.g., motion.div, motion.header, motion.p)
-  const MotionComponent = (motion as any).create?.(as) || (motion as any)[as] || motion.div;
+  const MotionComponent = motionElements[as as keyof typeof motionElements] || motion.div;
 
   return (
     <MotionComponent
