@@ -6,7 +6,7 @@ import "./ResumeButton.css";
 export default function ResumeButton() {
   return (
     <a
-      href="/resume.pdf"
+      href="/Sathyanesar_E_Resume.pdf"
       target="_blank"
       rel="noopener noreferrer"
       className="btn-12"

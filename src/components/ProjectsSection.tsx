@@ -9,12 +9,16 @@ import ScrollStack, { ScrollStackItem } from "./ui/ScrollStack";
 const PROJECTS = [
   {
     num: "01",
-    category: "Python / RAG / VectorDB / FastAPI / LLM",
+    category: "Python / FastAPI / LangChain / ChromaDB / Streamlit",
     name: "Enterprise HR RAG Chatbot",
     label: "GitHub Repo",
     href: "https://github.com/sathya3103/Enterprise_RAG_Chatbot",
-    description: "A document-grounded RAG AI chatbot querying corporate HR handbooks with zero-hallucination tolerance, ChromaDB vector store, local Ollama (Qwen2.5) inference, and exact page citations.",
-    highlights: ["User-upload-first dynamic PDF ingestion", "ChromaDB vector store with MMR similarity search", "Page-level attribution & 0.30 distance cut-off"],
+    description: "Built a document-grounded RAG chatbot for HR policy PDFs with page-level source citations and fallback handling for queries without sufficient retrieved context.",
+    highlights: [
+      "Document ingestion & deduplication using MiniLM embeddings & ChromaDB",
+      "MMR retrieval with local inference through Ollama (Qwen2.5)",
+      "Page-level source citations & strict distance cut-off for zero hallucinations",
+    ],
   },
   {
     num: "02",
@@ -22,17 +26,25 @@ const PROJECTS = [
     name: "NextBench Marketplace",
     label: "Live Demo",
     href: "https://nextbench-app.vercel.app",
-    description: "A production-grade web marketplace designed for performance benchmarking, loaded with secure JWT sessions, optimized databases, and cart pipelines.",
-    highlights: ["Production-ready marketplace", "Normalized database schema", "Secure JWT authentication flows"],
+    description: "Built and deployed a full-stack marketplace using React and PostgreSQL, implementing authentication and transaction workflows.",
+    highlights: [
+      "Normalized PostgreSQL schema & relational database design",
+      "RESTful API with secure JWT-based authentication workflows",
+      "End-to-end integration connecting React UI with backend services",
+    ],
   },
   {
     num: "03",
-    category: "Python / Automation / API",
+    category: "Python / Automation / OpenWeatherMap API",
     name: "WhatsApp Weather Alert Automation",
     label: "GitHub Repo",
     href: "https://github.com/sathya3103/weather_alert_python",
-    description: "Automated Python schedule utility tracking meteorological forecasts, querying live weather APIs, and dispatching real-time notifications to WhatsApp endpoints.",
-    highlights: ["Automated 4-day forecasts", "Near-100% delivery reliability", "Sub-3-second notification triggers"],
+    description: "Automated 4-day weather forecast delivery to WhatsApp using the OpenWeatherMap API, eliminating the need for manual forecast lookups.",
+    highlights: [
+      "Automated 4-day forecast retrieval via OpenWeatherMap API",
+      "Multilayer delivery fallback using Selenium & PyWhatKit",
+      "Remote Chrome session integration for reliable automated delivery",
+    ],
   },
   {
     num: "04",
@@ -40,8 +52,12 @@ const PROJECTS = [
     name: "Keystroke Logging Demonstration",
     label: "GitHub Repo",
     href: "https://github.com/sathya3103/Keystroke_Logging",
-    description: "Cross-platform keyboard register auditing system developed in Python for cybersecurity lab forensics, capturing inputs in both clean and timestamp-detailed structures.",
-    highlights: ["Cross-platform utility (Win/Linux)", "Forensic timestamp-based logging", "Built for defensive threat analysis"],
+    description: "Built a Python-based keystroke-logging security demonstration using pynput to study keylogging mechanics in a controlled cybersecurity lab environment.",
+    highlights: [
+      "Keyboard-event handling with pynput for lab threat analysis",
+      "Dual clean-text and forensic timestamp-based logging",
+      "Cross-platform defensive security testing on Windows & Linux",
+    ],
   },
 ];
 
@@ -135,10 +151,10 @@ export default function ProjectsSection() {
       <div className="max-w-[1280px] mx-auto flex flex-col items-center">
         
         {/* Heading */}
-        <FadeIn delay={0} y={40} className="w-full text-center mb-16">
+        <FadeIn delay={0} y={40} className="w-full text-center mb-8 sm:mb-12">
           <h2 
             className="hero-heading font-black uppercase text-center"
-            style={{ fontSize: "clamp(3rem, 12vw, 160px)" }}
+            style={{ fontSize: "clamp(1.8rem, 3.5vw, 3rem)" }}
           >
             Projects
           </h2>

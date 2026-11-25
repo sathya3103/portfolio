@@ -5,7 +5,7 @@ import React from "react";
 const NAV_LINKS = [
   { name: "About", href: "#about" },
   { name: "Skills", href: "#skills" },
-  { name: "Internships", href: "#internships" },
+  { name: "Career", href: "#career" },
   { name: "Projects", href: "#projects" },
   { name: "Contact", href: "#contact" },
 ];
