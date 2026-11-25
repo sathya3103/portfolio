@@ -67,6 +67,9 @@ export const metadata: Metadata = {
     creator: "@sathya3103",
     images: ["/og-image.png"],
   },
+  verification: {
+    google: "V6HAuZN5Iz-G5s-WkBJmoXKBw_8gtWLzMv0eZfrPOeA",
+  },
   icons: {
     icon: [
       {
