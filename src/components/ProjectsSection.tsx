@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import LiveProjectButton from "./ui/LiveProjectButton";
 import FadeIn from "./ui/FadeIn";
 import ScrollStack, { ScrollStackItem } from "./ui/ScrollStack";
@@ -75,9 +76,13 @@ function ProjectMockup({ num }: { num: string }) {
     // NextBench
     return (
       <div className="w-full h-full min-h-[160px] bg-[#111111]/90 rounded-2xl overflow-hidden flex items-center justify-center border border-[#D7E2EA]/10 group/img relative">
-        <img
-          src="/nextbench_preview.png"
+        <Image
+          src="/nextbench_preview.webp"
           alt="NextBench Campus Marketplace"
+          width={1024}
+          height={451}
+          loading="lazy"
+          sizes="(max-width: 480px) min(384px, calc(100vw - 84px)), (max-width: 767px) 384px, (max-width: 1023px) calc(50vw - 87px), 450px"
           className="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-105"
         />
       </div>
@@ -88,9 +93,13 @@ function ProjectMockup({ num }: { num: string }) {
     // WhatsApp Weather
     return (
       <div className="w-full h-full min-h-[160px] bg-[#111111]/90 rounded-2xl overflow-hidden flex items-center justify-center border border-[#D7E2EA]/10 group/img relative">
-        <img
-          src="/weather_preview.png"
+        <Image
+          src="/weather_preview.webp"
           alt="WhatsApp Weather Alert Automation"
+          width={618}
+          height={530}
+          loading="lazy"
+          sizes="(max-width: 480px) min(384px, calc(100vw - 84px)), (max-width: 767px) 384px, (max-width: 1023px) calc(50vw - 87px), 450px"
           className="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-105"
         />
       </div>
