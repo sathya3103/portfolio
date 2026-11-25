@@ -1,22 +1,39 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import FadeIn from "./ui/FadeIn";
-import Lanyard from "./ui/Lanyard";
 import SocialTooltip from "./ui/SocialTooltip";
 import WaveBackground from "./ui/WaveBackground";
 import SideRays from "./ui/SideRays";
 import ResumeButton from "./ui/ResumeButton";
 
+const Lanyard = dynamic(() => import("./ui/Lanyard"), {
+  ssr: false,
+});
+
 export default function HeroSection() {
+  const [isDesktop, setIsDesktop] = useState(false);
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
   // Smooth spring physics for a fluid trailing glow
   const spotlightX = useSpring(mouseX, { stiffness: 60, damping: 22 });
   const spotlightY = useSpring(mouseY, { stiffness: 60, damping: 22 });
+
+  useEffect(() => {
+    const mql = window.matchMedia("(min-width: 1024px)");
+    setIsDesktop(mql.matches);
+    const onChange = (e: MediaQueryListEvent) => {
+      setIsDesktop(e.matches);
+    };
+    mql.addEventListener("change", onChange);
+    return () => {
+      mql.removeEventListener("change", onChange);
+    };
+  }, []);
 
   useEffect(() => {
     const handleMove = (e: MouseEvent | TouchEvent) => {
@@ -138,13 +155,15 @@ export default function HeroSection() {
       <div className="hidden lg:flex absolute right-0 top-0 bottom-0 w-full lg:w-[58vw] xl:w-[52vw] h-full z-40 pointer-events-none items-center justify-center overflow-hidden">
         <div className="w-full h-full pointer-events-auto">
           <FadeIn delay={0.6} y={30} className="w-full h-full">
-            <Lanyard 
-              position={[0, 0, 16]} 
-              gravity={[0, -40, 0]} 
-              frontImage="/sathyanesar_profile.png" 
-              backImage="/sathyanesar_profile.png" 
-              imageFit="cover" 
-            />
+            {isDesktop && (
+              <Lanyard 
+                position={[0, 0, 16]} 
+                gravity={[0, -40, 0]} 
+                frontImage="/sathyanesar_profile.png" 
+                backImage="/sathyanesar_profile.png" 
+                imageFit="cover" 
+              />
+            )}
           </FadeIn>
         </div>
       </div>

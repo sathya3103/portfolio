@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import React from "react";
@@ -39,6 +40,10 @@ const CATEGORIZED_SKILLS = [
           <img 
             src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" 
             alt="Java" 
+            width={24}
+            height={24}
+            loading="lazy"
+            decoding="async"
             className="w-[24px] h-[24px] object-contain" 
           />
         )
@@ -49,6 +54,10 @@ const CATEGORIZED_SKILLS = [
           <img 
             src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" 
             alt="Python" 
+            width={24}
+            height={24}
+            loading="lazy"
+            decoding="async"
             className="w-[24px] h-[24px] object-contain" 
           />
         )
@@ -59,6 +68,10 @@ const CATEGORIZED_SKILLS = [
           <img 
             src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqldeveloper/sqldeveloper-original.svg" 
             alt="SQL" 
+            width={24}
+            height={24}
+            loading="lazy"
+            decoding="async"
             className="w-[24px] h-[24px] object-contain" 
           />
         )
@@ -74,16 +87,24 @@ const CATEGORIZED_SKILLS = [
           <img 
             src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" 
             alt="JavaScript" 
+            width={22}
+            height={22}
+            loading="lazy"
+            decoding="async"
             className="w-[22px] h-[22px] rounded-[3px] object-contain" 
           />
         )
       },
-      {
-        name: "React.js",
+      { 
+        name: "React.js", 
         icon: (
           <img 
             src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" 
             alt="React.js" 
+            width={26}
+            height={26}
+            loading="lazy"
+            decoding="async"
             className="w-[26px] h-[26px] object-contain" 
           />
         )
@@ -95,6 +116,10 @@ const CATEGORIZED_SKILLS = [
             <img 
               src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" 
               alt="HTML5" 
+              width={20}
+              height={20}
+              loading="lazy"
+              decoding="async"
               className="w-[20px] h-[20px] object-contain" 
             />
           </div>
@@ -107,6 +132,10 @@ const CATEGORIZED_SKILLS = [
             <img 
               src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" 
               alt="CSS3" 
+              width={20}
+              height={20}
+              loading="lazy"
+              decoding="async"
               className="w-[20px] h-[20px] object-contain" 
             />
           </div>
@@ -123,6 +152,10 @@ const CATEGORIZED_SKILLS = [
           <img 
             src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" 
             alt="PostgreSQL" 
+            width={24}
+            height={24}
+            loading="lazy"
+            decoding="async"
             className="w-[24px] h-[24px] object-contain" 
           />
         )
@@ -133,6 +166,10 @@ const CATEGORIZED_SKILLS = [
           <img 
             src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" 
             alt="MySQL" 
+            width={26}
+            height={26}
+            loading="lazy"
+            decoding="async"
             className="w-[26px] h-[26px] object-contain" 
           />
         )
@@ -143,6 +180,10 @@ const CATEGORIZED_SKILLS = [
           <img 
             src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-plain-wordmark.svg" 
             alt="MongoDB" 
+            width={24}
+            height={24}
+            loading="lazy"
+            decoding="async"
             className="w-[24px] h-[24px] object-contain" 
           />
         )
@@ -159,6 +200,10 @@ const CATEGORIZED_SKILLS = [
             <img 
               src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" 
               alt="Git" 
+              width={20}
+              height={20}
+              loading="lazy"
+              decoding="async"
               className="w-[20px] h-[20px] object-contain" 
             />
           </div>
@@ -171,6 +216,10 @@ const CATEGORIZED_SKILLS = [
             <img 
               src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" 
               alt="GitHub" 
+              width={20}
+              height={20}
+              loading="lazy"
+              decoding="async"
               className="w-[20px] h-[20px] object-contain brightness-0 invert" 
             />
           </div>
@@ -182,6 +231,10 @@ const CATEGORIZED_SKILLS = [
           <img 
             src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" 
             alt="VS Code" 
+            width={24}
+            height={24}
+            loading="lazy"
+            decoding="async"
             className="w-[24px] h-[24px] object-contain" 
           />
         )
